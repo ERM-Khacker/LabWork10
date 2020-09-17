@@ -9,7 +9,7 @@ public class Main {
         System.out.println(film.getName() + film.getGenre() + film.getDuration() + " часа");
         System.out.println();
 
-        Film film1 = new Film("The Hobbit: The Desolation of Smaug","Fantasy, Adventures",2.41);
+        Film film1 = new Film("The Hobbit: The Desolation of Smaug", "Fantasy, Adventures", 2.41);
         System.out.println();
 
         film1.setName("The Hobbit: The Battle of the Five Armies! ");
@@ -20,6 +20,5 @@ public class Main {
         film1.genre();
 
         Library films = new Library("Favorites");
-
     }
 }

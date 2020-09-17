@@ -2,14 +2,13 @@ public class Library {
     private final String NAME_LIBRARIES;
     private String nameFilm;
 
+
     static {
         String[] films = {"The Matrix", "The Matrix Reloaded", "The Matrix Revolutions", "Saving private Ryan",
                 "The King’s Speech"};
         System.out.println("Добавлены любимые фильмы");
         for (int i = 0; i < films.length; i++) {
-           //System.out.println(films[i]);
             if (i != 0){
-                System.out.println(films[i]);
                 break;
             }else {
                 System.out.println(-1);
