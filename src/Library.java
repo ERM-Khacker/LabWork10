@@ -1,39 +1,50 @@
 public class Library {
-    private final String NAME_LIBRARIES;
-    private String nameFilm;
+    //Создать класс Library.
+    //Описать поля: Массив из фильмов, название библиотеки.
+    private final String nameLibraries;
+    public Film[] films;
 
-
-    static {
-        String[] films = {"The Matrix", "The Matrix Reloaded", "The Matrix Revolutions", "Saving private Ryan",
-                "The King’s Speech"};
+    //Добавить блок инициализации в котором создается массив (с размером 5) для поля списка фильмов.
+    {
+        //Заполнить первые 2 элемента массива прямо в блоке инициализации. Создать 2 своих
+        //любимых фильма, и добавить в массив. Вывести сообщения на экран: “Добавлены любимые фильмы”
+        films = new Film[5];
+        films[0] = new Film("The Matrix", "Cyberpunk", 2.30);
+        films[1] = new Film("The Matrix Reloaded", "Cyberpunk", 2.35);
         System.out.println("Добавлены любимые фильмы");
-        for (int i = 0; i < films.length; i++) {
-            if (i != 0){
-                break;
-            }else {
-                System.out.println(-1);
-            }
+        System.out.println(returnCell(films));
+    }
 
+    //Добавить конструктор для класса Library, который принимает и инициализирует имя
+    //библиотеки. Вывести сообщение на экран: «Библиотека “название”, успешно создана.»
+    public Library(String nameLibraries) {
+        this.nameLibraries = nameLibraries;
+        System.out.println("Библиотека " + nameLibraries + ", успешно создана");
+    }
+
+    // we are checking this method is it filled array or non filled
+    int returnCell(Film[] films) {
+        for (int i = 0; i < films.length; i++) {
+            if (films[i] == null)
+                return i;
+        }
+        return -1;
+    }
+
+    // using this method i am implement of check for an availability empty cell. If cell in array is
+    // empty then method return index, if in array all cells occupied then method return:
+    // Вы достигли лимита
+    public String implementCheck(Film[] arrayOfFilms, Film film) {
+        int indexOfArray = returnCell(arrayOfFilms);
+        if (indexOfArray == -1) {
+            return "Вы достигли лимита";
+        } else {
+            arrayOfFilms[indexOfArray] = film;
+            return "your film was added to cell with index: " + indexOfArray;
         }
     }
 
 
-    public Library(String NAME_LIBRARIES) {
-        this.NAME_LIBRARIES = NAME_LIBRARIES;
-        System.out.println("Библиотека " + NAME_LIBRARIES + ", успешно создана");
-    }
-
-    public String getNAME_LIBRARIES() {
-        return NAME_LIBRARIES;
-    }
-
-    public String getNameFilm() {
-        return nameFilm;
-    }
-
-    public void setNameFilm(String nameFilm) {
-        this.nameFilm = nameFilm;
-    }
 }
     /*Создать класс Library.
         Описать поля: Массив из фильмов, название библиотеки.

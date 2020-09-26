@@ -1,4 +1,5 @@
 public class Film {
+    //Создать класс Film. Описать поля: Название, продолжительность, жанр.
     private String name;
     private double duration; //в часах
     private String genre;
@@ -6,10 +7,13 @@ public class Film {
     final String COMEDY = "Комедии";
     final String HORRORS = "Ужасы";
 
+    //Добавить блок инициализации в котором вывести на экран сообщение: «Создается новый Фильм».
     static {
         System.out.println("Создается новый фильм!");
     }
 
+    //Создать конструктор с параметрами, геттеры и сеттеры.
+    //В конструкторе добавить вывод на экран сообщение: «Фильм “название”, успешно создана.»
     public Film(String nameFilm, String genre, double duration) {
         name = nameFilm;
         this.genre = genre;
@@ -20,6 +24,7 @@ public class Film {
     void genre(){
         System.out.println(SCIENCE_FICTION + " " + HORRORS + " " + COMEDY);
     }
+
 
     public String getName() {
         return name;
