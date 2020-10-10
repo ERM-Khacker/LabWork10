@@ -12,7 +12,14 @@ public class Library {
         films[0] = new Film("The Matrix", "Cyberpunk", 2.30);
         films[1] = new Film("The Matrix Reloaded", "Cyberpunk", 2.35);
         System.out.println("Добавлены любимые фильмы");
-        System.out.println(returnCell(films));
+        System.out.println(returnCell());
+        System.out.println();
+        //Повторить шаги 4.1 - 4.2, пока не будет достигнут лимит
+        //Implement check filling of array with movies
+        System.out.println(implementCheck(new Film("The Matrix Revolution","Cyberpunk",3.20)));
+        System.out.println(implementCheck(new Film("Some film","some genre",2.23)));
+        System.out.println(implementCheck(new Film("Some film","Some Genre",3.10)));
+        System.out.println(implementCheck(new Film("Some film","any genre",2.20)));
     }
 
     //Добавить конструктор для класса Library, который принимает и инициализирует имя
@@ -23,7 +30,7 @@ public class Library {
     }
 
     // we are checking this method is it filled array or non filled
-    int returnCell(Film[] films) {
+    public int returnCell(){
         for (int i = 0; i < films.length; i++) {
             if (films[i] == null)
                 return i;
@@ -34,12 +41,12 @@ public class Library {
     // using this method i am implement of check for an availability empty cell. If cell in array is
     // empty then method return index, if in array all cells occupied then method return:
     // Вы достигли лимита
-    public String implementCheck(Film[] arrayOfFilms, Film film) {
-        int indexOfArray = returnCell(arrayOfFilms);
+    public String implementCheck(Film film) {
+        int indexOfArray = returnCell();
         if (indexOfArray == -1) {
             return "Вы достигли лимита";
         } else {
-            arrayOfFilms[indexOfArray] = film;
+            films[indexOfArray] = film;
             return "your film was added to cell with index: " + indexOfArray;
         }
     }
